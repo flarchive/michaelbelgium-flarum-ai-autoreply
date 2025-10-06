@@ -1,0 +1,73 @@
+<?php
+
+namespace MichaelBelgium\FlarumAIAutoReply;
+
+use Flarum\Settings\SettingsRepositoryInterface;
+use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
+use Illuminate\Support\Facades\Http;
+use Psr\Log\LoggerInterface;
+
+class OpenrouterClient implements IPlatform
+{
+    private ?Client $client = null;
+
+    public function __construct(protected SettingsRepositoryInterface $settings, protected LoggerInterface $logger)
+    {
+        $apiKey = $this->settings->get('michaelbelgium-ai-autoreply.api_key');
+
+        if (empty($apiKey))
+        {
+            $this->logger->error('OpenRouter API key is not set.');
+            return null;
+        }
+
+        $this->client = new Client([
+            RequestOptions::HEADERS => [
+                'Authorization' => "Bearer $apiKey",
+                'Content-Type' => 'application/json',
+            ]
+        ]);
+    }
+
+    public function completions(string $content): ?string
+    {
+        if ($this->client === null)
+            return null;
+
+        $model = $this->settings->get('michaelbelgium-ai-autoreply.model');
+        $tokens = $this->settings->get('michaelbelgium-ai-autoreply.max_tokens');
+
+        if (empty($model))
+            $model = 'openrouter/auto';
+        else if (str_contains($model, ','))
+            $model = explode(',', $models);
+
+        $options = [
+            'model' => $model,
+            'messages' => [
+                [
+                    'role' => 'user',
+                    'content' => $content
+                ]
+            ]
+        ];
+
+        if (!empty($tokens))
+            $options['max_tokens'] = (int)$tokens;
+
+        try {
+            $response = $this->client->post('https://openrouter.ai/api/v1/chat/completions', [
+                RequestOptions::JSON => $options
+            ]);
+
+            $json = json_decode((string)$response->getBody(), true);
+
+            return $json['choices'][0]['message']['content'];
+        } catch (\Exception $e) {
+            $this->logger->error($e->getMessage());
+        }
+
+        return null;
+    }
+}
