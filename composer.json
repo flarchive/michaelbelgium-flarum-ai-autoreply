@@ -1,0 +1,80 @@
+{
+    "name": "michaelbelgium/flarum-ai-autoreply",
+    "description": "AI-powered Auto-Reply Extension for Flarum.",
+    "keywords": [
+        "flarum",
+        "chatgpt",
+        "openai",
+        "ai",
+        "autoreply",
+        "anthropic",
+        "claude",
+        "gpt"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "flarum/core": "^1.0",
+        "openai-php/client": "^0.16.1",
+        "anthropic-ai/sdk": "^0.3.0",
+        "guzzlehttp/guzzle": "^7.10"
+    },
+    "authors": [
+        {
+            "name": "Ngo Quoc Dat",
+            "email": "datlechin@gmail.com",
+            "role": "Developer",
+            "homepage": "https://ngoquocdat.dev"
+        },
+        {
+            "name": "Michael V.",
+            "email": "michael@michaelbelgium.me",
+            "role": "Developer",
+            "homepage": "https://michaelbelgium.me"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/michaelbelgium/flarum-ai-autoreply",
+        "forum": "https://discuss.flarum.org/d/38244"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelBelgium\\FlarumAIAutoReply\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "AI Auto-Reply",
+            "category": "feature",
+            "icon": {
+                "image": "icon.svg"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "jsCommon": false,
+                "css": true,
+                "locale": true,
+                "gitConf": true,
+                "githubActions": false,
+                "prettier": true,
+                "typescript": true,
+                "bundlewatch": false,
+                "backendTesting": false,
+                "editorConfig": true,
+                "styleci": false
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
