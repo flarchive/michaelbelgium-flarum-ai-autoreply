@@ -2,13 +2,20 @@
 
 > **Read-only archive of released versions of michaelbelgium/flarum-ai-autoreply.** Not for installation: use [Packagist](https://packagist.org/packages/michaelbelgium/flarum-ai-autoreply) or the [upstream repository](https://github.com/MichaelBelgium/flarum-ai-autoreply).
 
-**0** versions archived · Latest: [`v2.0.1`](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v2.0.1) · License: `MIT` · Flarum: `^2.0.0-rc.1`
+**8** versions archived · Latest: [`v2.0.1`](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v2.0.1) · License: `MIT` · Flarum: `^2.0.0-rc.1`
 
 ## Archived Versions
 
 | Version | Released | Flarum | Source |
 |---|---|---|---|
-| — | — | — | — |
+| `v1.0.0` | 2025-10-01 | `^1.0` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v1.0.0) |
+| `v1.1.0` | 2025-10-06 | `^1.0` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v1.1.0) |
+| `v1.1.1` | 2025-10-06 | `^1.0` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v1.1.1) |
+| `v1.2.0` | 2025-10-24 | `^1.0` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v1.2.0) |
+| `v1.3.0` | 2025-11-21 | `^1.0` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v1.3.0) |
+| `v1.3.1` | 2026-07-03 | `^1.0` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v1.3.1) |
+| `v2.0.0` | 2026-04-20 | `^2.0.0-rc.1` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v2.0.0) |
+| `v2.0.1` | 2026-07-03 | `^2.0.0-rc.1` | [Browse](https://github.com/flarchive/michaelbelgium-flarum-ai-autoreply/tree/archive/v2.0.1) |
 
 Catalog entry: [packages/michaelbelgium-flarum-ai-autoreply.json](https://github.com/flarchive/archive-index/blob/main/packages/michaelbelgium-flarum-ai-autoreply.json)
 
